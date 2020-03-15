@@ -31,6 +31,9 @@ YTP++ is the name given to the second iteration of the software, however there w
 All configuration settings may be found in the application itself, either on the interface or in the Tools menu. [ImageMagick](https://imagemagick.org/) is required for the Squidward effect but is otherwise not needed.
 A 32-bit version of [VLC](https://www.videolan.org/vlc/) is recommended to run this software, please install it beforehand for enhanced functionality.
 
+## I can't run YTP++, it just blinks and dissapears!
+Try installing the [.NET Framework 4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472) or newer runtime. Please note that YTP++ does not currently run on Windows Vista or below and has only been tested under Windows 10.
+
 ## I installed VLC, but it's still giving me an error?
 Make sure it is the **32-bit** version of VLC as the 64-bit one will not work unless you select it manually.
 
