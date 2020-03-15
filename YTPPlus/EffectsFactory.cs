@@ -99,6 +99,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 int exitValue = process.ExitCode;
@@ -159,6 +160,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 int exitValue = process.ExitCode;
@@ -196,6 +198,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 exitValue = process.ExitCode;
@@ -258,6 +261,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 int exitValue = process.ExitCode;
@@ -293,6 +297,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 exitValue = process.ExitCode;
@@ -347,6 +352,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 int exitValue = process.ExitCode;
@@ -400,6 +406,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 int exitValue = process.ExitCode;
@@ -453,6 +460,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 int exitValue = process.ExitCode;
@@ -506,6 +514,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 int exitValue = process.ExitCode;
@@ -559,6 +568,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 int exitValue = process.ExitCode;
@@ -612,6 +622,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 int exitValue = process.ExitCode;
@@ -740,6 +751,7 @@ namespace YTPPlus
                     }
 
                     process.WaitForExit();
+                    Thread.Sleep(2000);
                     stderrThread.Join();
                     exitValue = process.ExitCode;
                 }
@@ -908,6 +920,7 @@ namespace YTPPlus
                     }
 
                     process.WaitForExit();
+                    Thread.Sleep(2000);
                     stderrThread.Join();
                     exitValue = process.ExitCode;
                 }
@@ -971,6 +984,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 int exitValue = process.ExitCode;
@@ -1049,6 +1063,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 int exitValue = process.ExitCode;

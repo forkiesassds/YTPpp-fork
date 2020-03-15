@@ -354,7 +354,10 @@
 </value>
   </data>
   <data name="textBoxDescription.Text" xml:space="preserve">
-    <value>YTP++ Version 2.1
+    <value>YTP++ Version 2.1-lowend
+
+This branch is designed for low-end PCs that cannot run YTP++ normally.
+If you do not have a low-end PC, I strongly recommend getting the normal version of YTP++ as it is much faster.
 
 This software is distributed as Free and Open Source Software (FOSS) and if you have recieved this software as part of a bundle, trade, or purchase; you have been scammed.
 

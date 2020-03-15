@@ -155,6 +155,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
                 if (process.HasExited && process.ExitCode == 1)
@@ -208,6 +209,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
 
@@ -287,6 +289,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
 
 
