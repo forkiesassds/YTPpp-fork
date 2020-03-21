@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.IO;
+using System.Threading;
 
 namespace YTPPlus
 {
@@ -284,9 +285,9 @@ namespace YTPPlus
                         writer.WriteLineAsync("file 'video" + i + ".mp4'\n"); //writing to same folder
                     }
                 }*/
-                //Thread.sleep(10000);
+                Thread.Sleep(10000);
                 toolBox.concatenateVideo(MAX_CLIPS, OUTPUT_FILE);
-                //Thread.sleep(4000);
+                Thread.Sleep(4000);
 
             }
             catch (Exception ex)

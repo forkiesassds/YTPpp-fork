@@ -67,6 +67,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 stderrThread.Join();
                 return errorText;
             }
@@ -102,6 +103,7 @@ namespace YTPPlus
                 }
 
                 process.WaitForExit();
+                Thread.Sleep(2000);
                 Console.WriteLine(s);
                 return s;
 
