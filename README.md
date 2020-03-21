@@ -11,10 +11,6 @@
   </p>
 </p>
 
-## This branch of YTP++ introduces thread sleeping for low end PCs or laptops
-### What is "thread sleeping"?
-Thread sleeping means purposefully waiting between each large operation to alleviate CPU workloads whenever possible. However, please be cautious when using plugins as they may use more intensive workloads unless modified to accommodate for thread sleeping as well. This branch was made specifically for laptop/battery users, there is nothing special about it other than the fact that it is **a lot** slower than the ``master`` branch.
-
 ## YTP++ is an iteration of [YTP+](https://github.com/philosophofee/YTPPlus), written in C#.
 ### It includes new features and benefits over the previous iteration, such as:
 
