@@ -73,6 +73,7 @@
             this.themes = new System.Windows.Forms.MenuItem();
             this.theme_dark = new System.Windows.Forms.MenuItem();
             this.theme_light = new System.Windows.Forms.MenuItem();
+            this.theme_custom = new System.Windows.Forms.MenuItem();
             this.theme_customedit = new System.Windows.Forms.MenuItem();
             this.notimplemented = new System.Windows.Forms.MenuItem();
             this.theme_foreground = new System.Windows.Forms.MenuItem();
@@ -173,7 +174,6 @@
             this.openFileDialogFFProbe = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserVLC = new System.Windows.Forms.FolderBrowserDialog();
-            this.theme_custom = new System.Windows.Forms.MenuItem();
             this.Video.SuspendLayout();
             this.Settings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Clips)).BeginInit();
@@ -692,6 +692,12 @@
             this.theme_light.RadioCheck = true;
             this.theme_light.Text = "Light";
             this.theme_light.Click += new System.EventHandler(this.theme_light_Click);
+            // 
+            // theme_custom
+            // 
+            this.theme_custom.Enabled = false;
+            this.theme_custom.Index = 2;
+            this.theme_custom.Text = "Custom";
             // 
             // theme_customedit
             // 
@@ -1403,12 +1409,6 @@
             // 
             this.folderBrowserVLC.Description = "Please locate your VLC directory. (VideoLAN/VLC)";
             // 
-            // theme_custom
-            // 
-            this.theme_custom.Enabled = false;
-            this.theme_custom.Index = 2;
-            this.theme_custom.Text = "Custom";
-            // 
             // YTPPlusPlus
             // 
             this.AccessibleDescription = "Youtube Poop Generator";
@@ -1431,7 +1431,7 @@
             this.Name = "YTPPlusPlus";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "YTP++ [v2.1]";
+            this.Text = "YTP++ [v2.2]";
             this.Load += new System.EventHandler(this.YTPPlusPlus_Load);
             this.Video.ResumeLayout(false);
             this.Settings.ResumeLayout(false);
