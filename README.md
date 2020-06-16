@@ -1,4 +1,5 @@
 <p align="center">
+  <img width="100" height="100" src="https://cdn.discordapp.com/attachments/641429403665956884/721982082066415716/newytplogo_plusplus.png">
   <h1 align="center">YTP++</h1>
   <h2 align="center">Made with ❤ in C#.</h2>
   <p align="center">
@@ -24,7 +25,7 @@
 For those of you using plugins, please be aware that YTP++ has no mind in what is a real plugin batch and what isn't. Any non-verified plugins have the potential to be malicious, be on the look out for the malicious use of plugins as there is a possibility that a plugin can be harmful. Remember to **NEVER** start YTP++ as an administrator.
 
 ## What is YTP+ and YTP++?
-YTP+ is the name given to a set of tools to automatically generate YouTube Poop videos.
+YTP+ is the name given to a set of tools to automatically generate machinima-like videos.
 YTP++ is the name given to the second iteration of the software, however there was once a [YTP++ made in Electron and Node.JS](https://github.com/TeamPopplio/ytpplus-node-ui).
 
 ## How do I configure YTP++?
@@ -42,6 +43,9 @@ Try adding magick.exe to your system path. If you've checked the box needed in t
 
 ## I got a great idea for the program, where to start?
 Anyone is welcome to submit a pull request or suggest ideas via the [Discord server](https://discord.gg/bzhzRmg).
+
+## The YTP+ Project
+The [YTP+ project](https://ytp-plus.github.io/) is an ongoing effort to automatically generate machinimas. Anyone can contribute by forking a YTP+ related repository and expanding upon the goal. This software is apart of the project as well.
 
 ## OSS Credits
 [FFmpeg](https://github.com/FFmpeg/FFmpeg), [LibVLC](https://github.com/videolan/vlc), and [Vlc.DotNet](https://github.com/ZeBobo5/Vlc.DotNet).
