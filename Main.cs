@@ -27,7 +27,6 @@ namespace YTPPlusPlus
         string sounds = "sounds\\";
         string music = "music\\";
         string resources = "resources\\";
-		string accel = "";
         string[] sources = new string[0];
         //default variables
         bool transitionsDef = true;
@@ -102,7 +101,6 @@ namespace YTPPlusPlus
             this.sounds = Directory.GetCurrentDirectory() + "\\" + soundsDef;
             this.music = Directory.GetCurrentDirectory() + "\\" + musicDef;
             this.resources = Directory.GetCurrentDirectory() + "\\" + resourcesDef;
-			this.accel = "";
             pluginCount = 0;
             enabledPlugins.Clear();
             plugins.MenuItems.Clear();
@@ -1033,8 +1031,7 @@ namespace YTPPlusPlus
                 + "\n\n" + "My SOURCES is: " + TransitionDir.Text
                 + "\n\n" + "My MUSIC is: " + music
                 + "\n\n" + "My RESOURCES is: " + resources
-                + "\n\n" + "My VLC is: " + Properties.Settings.Default.VLC
-				+ "\n\n" + "Acceleration is:" + accel);
+                + "\n\n" + "My VLC is: " + Properties.Settings.Default.VLC);
         }
 
         private void m_saveas_Click(object sender, EventArgs e)
@@ -1179,11 +1176,6 @@ namespace YTPPlusPlus
         private void YTPPlusPlus_Load(object sender, EventArgs e)
         {
             this.FormClosing += YTPPlusPlus_FormClosing;
-        }
-
-        private void EnableAccel_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
