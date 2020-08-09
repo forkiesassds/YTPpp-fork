@@ -101,5 +101,8 @@
     <Setting Name="TransitionDir" Type="System.String" Scope="User">
       <Value Profile="(Default)">sources\</Value>
     </Setting>
+    <Setting Name="AccelEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

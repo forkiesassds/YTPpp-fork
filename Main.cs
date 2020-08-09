@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Management;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using YTPPlus;
@@ -26,6 +27,7 @@ namespace YTPPlusPlus
         string sounds = "sounds\\";
         string music = "music\\";
         string resources = "resources\\";
+		string accel = "";
         string[] sources = new string[0];
         //default variables
         bool transitionsDef = true;
@@ -43,6 +45,7 @@ namespace YTPPlusPlus
         bool introBoolDef = false;
         bool outroBoolDef = true;
         bool pluginTestDef = false;
+        bool accelDef = false;
         int clipCountDef = 20;
         int widthDef = 640;
         int heightDef = 480;
@@ -83,6 +86,7 @@ namespace YTPPlusPlus
             this.pluginTest.Checked = pluginTestDef;
             this.InsertIntro.Checked = introBoolDef;
             this.InsertOutro.Checked = outroBoolDef;
+            this.EnableAccel.Checked = accelDef;
             this.Clips.Value = clipCountDef;
             this.WidthSet.Value = widthDef;
             this.HeightSet.Value = heightDef;
@@ -98,6 +102,7 @@ namespace YTPPlusPlus
             this.sounds = Directory.GetCurrentDirectory() + "\\" + soundsDef;
             this.music = Directory.GetCurrentDirectory() + "\\" + musicDef;
             this.resources = Directory.GetCurrentDirectory() + "\\" + resourcesDef;
+			this.accel = "";
             pluginCount = 0;
             enabledPlugins.Clear();
             plugins.MenuItems.Clear();
@@ -148,6 +153,7 @@ namespace YTPPlusPlus
             this.pluginTest.Checked = Properties.Settings.Default.PluginTest;
             this.InsertIntro.Checked = Properties.Settings.Default.InsertIntro;
             this.InsertOutro.Checked = Properties.Settings.Default.InsertOutro;
+            this.accelDef = Properties.Settings.Default.AccelEnabled;
             this.Clips.Value = Properties.Settings.Default.Clips;
             this.WidthSet.Value = Properties.Settings.Default.Width;
             this.HeightSet.Value = Properties.Settings.Default.Height;
@@ -866,6 +872,40 @@ namespace YTPPlusPlus
                     generator.toolBox.SOURCES = this.TransitionDir.Text;
                     generator.toolBox.intro = this.Intro.Text;
                     generator.toolBox.outro = this.Outro.Text;
+                    generator.toolBox.accelEnabled = this.EnableAccel.Checked;
+                    if (generator.toolBox.accelEnabled == true)
+                    {
+                        ManagementObjectSearcher objvide = new ManagementObjectSearcher("select * from Win32_VideoController");
+                        foreach (ManagementObject obj in objvide.Get())
+                        {
+                            foreach (PropertyData property in obj.Properties)
+                            {
+                                if (property.Name == "Description")
+                                {
+                                    string name = property.Value.ToString();
+                                    if (name.ToLower().Contains("nvidia") || name.ToLower().Contains("gtx") || name.ToLower().Contains("titan") || name.ToLower().Contains("rtx") || name.ToLower().Contains("quatro"))
+                                    {
+                                        Console.WriteLine("Nvidia GPU detected, using NVENC for acceleration");
+                                        generator.toolBox.ACCEL = " -c:v h264_nvenc ";
+                                    }
+                                    else if (name.ToLower().Contains("amd") || name.ToLower().Contains("radeon") || name.ToLower().Contains("rx") || name.ToLower().Contains("vega"))
+                                    {
+                                        Console.WriteLine("AMD GPU detected, using AMF for acceleration");
+                                        generator.toolBox.ACCEL = " -c:v h264_amf ";
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("Unknown GPU?????? Got: " + name + " but expected to be a \"AMD\" or \"Nvidia\" GPU");
+                                        generator.toolBox.ACCEL = "";
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        generator.toolBox.ACCEL = "";
+                    }
                     Console.WriteLine("poop4");
                     generator.effect1 = this.effect_RandomSound.Checked;
                     generator.effect2 = this.effect_RandomSoundMute.Checked;
@@ -993,7 +1033,8 @@ namespace YTPPlusPlus
                 + "\n\n" + "My SOURCES is: " + TransitionDir.Text
                 + "\n\n" + "My MUSIC is: " + music
                 + "\n\n" + "My RESOURCES is: " + resources
-                + "\n\n" + "My VLC is: " + Properties.Settings.Default.VLC);
+                + "\n\n" + "My VLC is: " + Properties.Settings.Default.VLC
+				+ "\n\n" + "Acceleration is:" + accel);
         }
 
         private void m_saveas_Click(object sender, EventArgs e)
@@ -1138,6 +1179,11 @@ namespace YTPPlusPlus
         private void YTPPlusPlus_Load(object sender, EventArgs e)
         {
             this.FormClosing += YTPPlusPlus_FormClosing;
+        }
+
+        private void EnableAccel_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,6 +47,7 @@
             this.TransitionDir = new System.Windows.Forms.TextBox();
             this.InsertTransitions = new System.Windows.Forms.CheckBox();
             this.RenderSettings = new System.Windows.Forms.Panel();
+            this.EnableAccel = new System.Windows.Forms.CheckBox();
             this.HeightSet = new System.Windows.Forms.NumericUpDown();
             this.WidthSet = new System.Windows.Forms.NumericUpDown();
             this.Intro = new System.Windows.Forms.TextBox();
@@ -174,6 +175,7 @@
             this.openFileDialogFFProbe = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserVLC = new System.Windows.Forms.FolderBrowserDialog();
+            this.ClipSettingsLabel = new System.Windows.Forms.Label();
             this.Video.SuspendLayout();
             this.Settings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Clips)).BeginInit();
@@ -272,6 +274,7 @@
             this.Settings.AccessibleName = "Video Container";
             this.Settings.BackColor = System.Drawing.SystemColors.ControlDark;
             this.Settings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Settings.Controls.Add(this.ClipSettingsLabel);
             this.Settings.Controls.Add(this.Clips);
             this.Settings.Controls.Add(this.MaxStreamDur);
             this.Settings.Controls.Add(this.MinStreamDur);
@@ -283,14 +286,14 @@
             this.Settings.Controls.Add(this.InsertTransitions);
             this.Settings.Location = new System.Drawing.Point(13, 306);
             this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(320, 145);
+            this.Settings.Size = new System.Drawing.Size(320, 172);
             this.Settings.TabIndex = 7;
             // 
             // Clips
             // 
             this.Clips.BackColor = System.Drawing.SystemColors.Control;
             this.Clips.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Clips.Location = new System.Drawing.Point(226, 80);
+            this.Clips.Location = new System.Drawing.Point(226, 105);
             this.Clips.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -315,7 +318,7 @@
             0,
             0,
             65536});
-            this.MaxStreamDur.Location = new System.Drawing.Point(226, 54);
+            this.MaxStreamDur.Location = new System.Drawing.Point(226, 79);
             this.MaxStreamDur.Name = "MaxStreamDur";
             this.MaxStreamDur.Size = new System.Drawing.Size(88, 20);
             this.MaxStreamDur.TabIndex = 9;
@@ -335,7 +338,7 @@
             0,
             0,
             65536});
-            this.MinStreamDur.Location = new System.Drawing.Point(227, 28);
+            this.MinStreamDur.Location = new System.Drawing.Point(227, 53);
             this.MinStreamDur.Name = "MinStreamDur";
             this.MinStreamDur.Size = new System.Drawing.Size(88, 20);
             this.MinStreamDur.TabIndex = 8;
@@ -347,7 +350,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(6, 108);
+            this.progressBar1.Location = new System.Drawing.Point(3, 135);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(309, 32);
             this.progressBar1.TabIndex = 20;
@@ -356,7 +359,7 @@
             // 
             this.ClipCountLabel.AutoSize = true;
             this.ClipCountLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClipCountLabel.Location = new System.Drawing.Point(3, 82);
+            this.ClipCountLabel.Location = new System.Drawing.Point(3, 107);
             this.ClipCountLabel.Name = "ClipCountLabel";
             this.ClipCountLabel.Size = new System.Drawing.Size(62, 13);
             this.ClipCountLabel.TabIndex = 19;
@@ -366,7 +369,7 @@
             // 
             this.MaxStreamLabel.AutoSize = true;
             this.MaxStreamLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaxStreamLabel.Location = new System.Drawing.Point(3, 56);
+            this.MaxStreamLabel.Location = new System.Drawing.Point(3, 81);
             this.MaxStreamLabel.Name = "MaxStreamLabel";
             this.MaxStreamLabel.Size = new System.Drawing.Size(179, 13);
             this.MaxStreamLabel.TabIndex = 17;
@@ -376,7 +379,7 @@
             // 
             this.MinSteamLabel.AutoSize = true;
             this.MinSteamLabel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinSteamLabel.Location = new System.Drawing.Point(3, 30);
+            this.MinSteamLabel.Location = new System.Drawing.Point(3, 55);
             this.MinSteamLabel.Name = "MinSteamLabel";
             this.MinSteamLabel.Size = new System.Drawing.Size(178, 13);
             this.MinSteamLabel.TabIndex = 15;
@@ -387,7 +390,7 @@
             this.TransitionDir.BackColor = System.Drawing.SystemColors.Control;
             this.TransitionDir.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TransitionDir.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TransitionDir.Location = new System.Drawing.Point(227, 2);
+            this.TransitionDir.Location = new System.Drawing.Point(227, 27);
             this.TransitionDir.Name = "TransitionDir";
             this.TransitionDir.Size = new System.Drawing.Size(88, 22);
             this.TransitionDir.TabIndex = 7;
@@ -400,9 +403,9 @@
             this.InsertTransitions.Checked = true;
             this.InsertTransitions.CheckState = System.Windows.Forms.CheckState.Checked;
             this.InsertTransitions.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InsertTransitions.Location = new System.Drawing.Point(3, 3);
+            this.InsertTransitions.Location = new System.Drawing.Point(3, 28);
             this.InsertTransitions.Name = "InsertTransitions";
-            this.InsertTransitions.Size = new System.Drawing.Size(186, 17);
+            this.InsertTransitions.Size = new System.Drawing.Size(185, 17);
             this.InsertTransitions.TabIndex = 6;
             this.InsertTransitions.Text = "Insert Transition Clips (Sources)";
             this.InsertTransitions.UseVisualStyleBackColor = true;
@@ -411,6 +414,7 @@
             // 
             this.RenderSettings.BackColor = System.Drawing.SystemColors.ControlDark;
             this.RenderSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RenderSettings.Controls.Add(this.EnableAccel);
             this.RenderSettings.Controls.Add(this.HeightSet);
             this.RenderSettings.Controls.Add(this.WidthSet);
             this.RenderSettings.Controls.Add(this.Intro);
@@ -422,8 +426,20 @@
             this.RenderSettings.Controls.Add(this.RenderSettingsLabel);
             this.RenderSettings.Location = new System.Drawing.Point(339, 305);
             this.RenderSettings.Name = "RenderSettings";
-            this.RenderSettings.Size = new System.Drawing.Size(210, 145);
+            this.RenderSettings.Size = new System.Drawing.Size(210, 173);
             this.RenderSettings.TabIndex = 8;
+            // 
+            // EnableAccel
+            // 
+            this.EnableAccel.AutoSize = true;
+            this.EnableAccel.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EnableAccel.Location = new System.Drawing.Point(3, 145);
+            this.EnableAccel.Name = "EnableAccel";
+            this.EnableAccel.Size = new System.Drawing.Size(121, 17);
+            this.EnableAccel.TabIndex = 28;
+            this.EnableAccel.Text = "Enable Acceleration";
+            this.EnableAccel.UseVisualStyleBackColor = true;
+            this.EnableAccel.CheckedChanged += new System.EventHandler(this.EnableAccel_CheckedChanged);
             // 
             // HeightSet
             // 
@@ -1409,6 +1425,17 @@
             // 
             this.folderBrowserVLC.Description = "Please locate your VLC directory. (VideoLAN/VLC)";
             // 
+            // ClipSettingsLabel
+            // 
+            this.ClipSettingsLabel.AutoSize = true;
+            this.ClipSettingsLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClipSettingsLabel.Location = new System.Drawing.Point(103, 0);
+            this.ClipSettingsLabel.Name = "ClipSettingsLabel";
+            this.ClipSettingsLabel.Size = new System.Drawing.Size(117, 25);
+            this.ClipSettingsLabel.TabIndex = 21;
+            this.ClipSettingsLabel.Text = "Clip Settings";
+            this.ClipSettingsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // YTPPlusPlus
             // 
             this.AccessibleDescription = "Youtube Poop Generator";
@@ -1416,7 +1443,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(562, 466);
+            this.ClientSize = new System.Drawing.Size(562, 490);
             this.Controls.Add(this.Materials);
             this.Controls.Add(this.RenderSettings);
             this.Controls.Add(this.Settings);
@@ -1425,7 +1452,7 @@
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(578, 526);
+            this.MaximumSize = new System.Drawing.Size(578, 550);
             this.Menu = this.mainMenu1;
             this.MinimumSize = new System.Drawing.Size(578, 526);
             this.Name = "YTPPlusPlus";
@@ -1594,6 +1621,8 @@
         private System.Windows.Forms.MenuItem theme_textboxes_light;
         private System.Windows.Forms.MenuItem notimplemented;
         private System.Windows.Forms.MenuItem theme_custom;
+        private System.Windows.Forms.CheckBox EnableAccel;
+        private System.Windows.Forms.Label ClipSettingsLabel;
     }
 }
 

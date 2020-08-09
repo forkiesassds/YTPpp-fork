@@ -41,6 +41,7 @@ namespace YTPPlus
         public int height = 480;
         public bool intro = false;
         public bool outro = true;
+        public bool accelEnabled = false;
 
         public Utilities toolBox = new Utilities();
 
@@ -198,7 +199,7 @@ namespace YTPPlus
                         int effect = giveProbability(0, 15 + pluginCount);
                         if (pluginTest)
                             effect = 16;
-                        Console.WriteLine("STARTING EFFECT ON CLIP " + i + " EFFECT" + effect);
+                        Console.WriteLine("STARTING EFFECT ON CLIP " + i + " EFFECT" + effect + " ACCEL " + toolBox.ACCEL);
                         String clipToWorkWith = toolBox.TEMP + "video" + i + ".mp4";
                         switch (effect)
                         {
@@ -322,6 +323,7 @@ namespace YTPPlus
             Console.WriteLine("My SOURCES is: " + toolBox.SOURCES);
             Console.WriteLine("My MUSIC is: " + toolBox.MUSIC);
             Console.WriteLine("My RESOURCES is: " + toolBox.RESOURCES);
+            Console.WriteLine("Acceleration is: " + toolBox.accelEnabled + " and arg is " + toolBox.ACCEL);
             vidThreadWorker.DoWork += new DoWorkEventHandler(vidThread);
             vidThreadWorker.WorkerReportsProgress = true;
             vidThreadWorker.WorkerSupportsCancellation = true;

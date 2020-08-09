@@ -16,6 +16,7 @@ namespace YTPPlus
         public string FFPROBE;
         public string FFMPEG;
         public string MAGICK;
+        public string ACCEL;
 
         public string TEMP = "";
         public string SOURCES = "";
@@ -25,6 +26,8 @@ namespace YTPPlus
 
         public string intro = "";
         public string outro = "";
+
+        public bool accelEnabled = false;
 
         /**
          * Return the length of a video (in seconds)
@@ -130,7 +133,7 @@ namespace YTPPlus
                         + " -to " + endTime.ToString("0.#########################", new CultureInfo("en-US"))
                         + " -ac 1"
                         + " -ar 44100"
-                        + " -vf scale=" + width.ToString("0.#########################", new CultureInfo("en-US")) + "x" + height.ToString("0.#########################", new CultureInfo("en-US")) + ",setsar=1:1,fps=fps=30"
+                        + " -vf scale=" + width.ToString("0.#########################", new CultureInfo("en-US")) + "x" + height.ToString("0.#########################", new CultureInfo("en-US")) + ",setsar=1:1,fps=fps=30" + ACCEL
                         + " -y"
                         + " " + output + ".mp4";
                 startInfo.UseShellExecute = false;
@@ -183,7 +186,7 @@ namespace YTPPlus
                         + "\" -ar 44100"
                         + " -ac 1"
                         //+ " -filter:v fps=fps=30,setsar=1:1"
-                        + " -vf scale=" + width.ToString("0.#########################", new CultureInfo("en-US")) + "x" + height.ToString("0.#########################", new CultureInfo("en-US")) + ",setsar=1:1,fps=fps=30"
+                        + " -vf scale=" + width.ToString("0.#########################", new CultureInfo("en-US")) + "x" + height.ToString("0.#########################", new CultureInfo("en-US")) + ",setsar=1:1,fps=fps=30" + ACCEL
                         + " -y"
                         + " " + output + ".mp4";
                 startInfo.UseShellExecute = false;
@@ -257,7 +260,7 @@ namespace YTPPlus
                 }
 
                 //realcount +=1;
-                command1 += ("concat=n=" + realcount + ":v=1:a=1[outv][outa]\" -map \"[outv]\" -map \"[outa]\" -y " + ou);
+                command1 += ("concat=n=" + realcount + ":v=1:a=1[outv][outa]\" -map \"[outv]\" -map \"[outa]\""+ ACCEL + "-y " + ou);
                 Console.WriteLine(command1);
 
                 System.Diagnostics.Process process = new System.Diagnostics.Process();
