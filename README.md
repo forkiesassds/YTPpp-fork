@@ -7,7 +7,7 @@
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/forkiesassds/YTPpp-fork">
   <a href="https://github.com/forkiesassds/YTPpp-fork/blob/master/LICENSE.txt"><img alt="GitHub license" src="https://img.shields.io/github/license/YTP-Plus/YTPPlusPlus"></a>
   <a href="https://github.com/forkiesassds/YTPpp-fork/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/forkiesassds/YTPpp-fork/total"></a>
-  <a href="https://github.com/forkiesassds/YTPpp-fork/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/YTP-Plus/YTPPlusPlus"></a>
+  <a href="https://github.com/forkiesassds/YTPpp-fork/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/forkiesassds/YTPpp-fork"></a>
   </p>
 </p>
 
