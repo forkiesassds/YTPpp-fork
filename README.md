@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="100" height="100" src="https://cdn.discordapp.com/attachments/641429403665956884/721982082066415716/newytplogo_plusplus.png">
+  <!--<img width="100" height="100" src="https://cdn.discordapp.com/attachments/641429403665956884/721982082066415716/newytplogo_plusplus.png">-->
   <h1 align="center">YTP++</h1>
   <h2 align="center">Made with ❤ in C#.</h2>
   <p align="center">
