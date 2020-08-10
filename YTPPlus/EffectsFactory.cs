@@ -1017,6 +1017,102 @@ namespace YTPPlus
             catch (Exception ex) { Console.WriteLine("effect" + "\n" + ex); }
         }*/
 
+        public void effect_Pixelize(string video, int width, int height)
+        {
+            Console.WriteLine("effect_Pixelize initiated");
+            try
+            {
+                FileInfo inVid = new FileInfo(video);
+
+                string temp = toolBox.TEMP + "temp.mp4";
+                string temp2 = toolBox.TEMP + "temp2.mp4";
+                if (File.Exists(video))
+                {
+                    File.Delete(temp);
+                    inVid.MoveTo(temp);
+                }
+                if (File.Exists(temp2))
+                {
+                    File.Delete(temp2);
+                }
+                int pixelwidth = width / 6;
+                int pixelheight = height / 6;
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = toolBox.FFMPEG;
+                startInfo.Arguments = "-i " + toolBox.TEMP + "temp.mp4 -map 0"
+                        + " -ar 44100"
+                        + " -vf scale=" + pixelwidth.ToString("0.#########################", new CultureInfo("en-US")) + "x" + pixelheight.ToString("0.#########################", new CultureInfo("en-US")) + ",setsar=1:1,fps=fps=30" + toolBox.ACCEL
+                        + " -y " + toolBox.TEMP + "temp2.mp4";
+                startInfo.UseShellExecute = false;
+                startInfo.RedirectStandardOutput = true;
+                process.StartInfo = startInfo;
+                process.Start();
+                // Read stderr synchronously (on another thread)
+
+                string errorText = null;
+                var stderrThread = new Thread(() => { errorText = process.StandardOutput.ReadToEnd(); });
+                stderrThread.Start();
+
+                // Read stdout synchronously (on this thread)
+
+                while (true)
+                {
+                    var line = process.StandardOutput.ReadLine();
+                    if (line == null)
+                        break;
+
+                    Console.WriteLine(line);
+                }
+
+                process.WaitForExit();
+                stderrThread.Join();
+
+                int exitValue = process.ExitCode;
+
+                process = new System.Diagnostics.Process();
+                startInfo = new System.Diagnostics.ProcessStartInfo();
+
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = toolBox.FFMPEG;
+                startInfo.Arguments = "-i " + toolBox.TEMP + "temp2.mp4"
+                        + " -ar 44100"
+                        + " -vf scale=" + width.ToString("0.#########################", new CultureInfo("en-US")) + "x" + height.ToString("0.#########################", new CultureInfo("en-US")) + ":flags=neighbor,setsar=1:1,fps=fps=30" + toolBox.ACCEL
+                        + " -y " + video;
+                startInfo.UseShellExecute = false;
+                startInfo.RedirectStandardOutput = true;
+                process.StartInfo = startInfo;
+                process.Start();
+                // Read stderr synchronously (on another thread)
+
+                errorText = null;
+                stderrThread = new Thread(() => { errorText = process.StandardOutput.ReadToEnd(); });
+                stderrThread.Start();
+
+                // Read stdout synchronously (on this thread)
+
+                while (true)
+                {
+                    var line = process.StandardOutput.ReadLine();
+                    if (line == null)
+                        break;
+
+                    Console.WriteLine(line);
+                }
+
+                process.WaitForExit();
+                stderrThread.Join();
+
+                exitValue = process.ExitCode;
+
+                File.Delete(temp);
+                File.Delete(temp2);
+            }
+            catch (Exception ex) { Console.WriteLine("effect" + "\n" + ex); }
+        }
+
         public void effect_Plugin(string video, int width, int height, string plugin, double startOfClip, double endOfClip)
         {
             Console.WriteLine(plugin+" initiated");

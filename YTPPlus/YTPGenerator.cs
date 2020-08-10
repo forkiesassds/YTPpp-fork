@@ -30,6 +30,7 @@ namespace YTPPlus
         public bool effect10;
         public bool effect11;
         public bool effect12;
+        public bool effect13;
 
         public bool pluginTest = false;
         public int pluginCount = 0;
@@ -192,6 +193,12 @@ namespace YTPPlus
                                     effectsFactory.effect_RainbowTrail(clipToWorkWith, width, height, startOfClip, endOfClip);
                                 }
                                 break;*/
+                            case 13:
+                                if (effect13 == true)
+                                {
+                                    effectsFactory.effect_Pixelize(clipToWorkWith, width, height);
+                                }
+                                break;
                             default:
                                 if (effect > 15)
                                 {

@@ -430,5 +430,17 @@ namespace YTPPlusPlus.Properties {
                 this["AccelEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool effect_Pixelize {
+            get {
+                return ((bool)(this["effect_Pixelize"]));
+            }
+            set {
+                this["effect_Pixelize"] = value;
+            }
+        }
     }
 }

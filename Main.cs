@@ -41,6 +41,7 @@ namespace YTPPlusPlus
         bool effect9Def = true;
         bool effect10Def = true;
         bool effect11Def = true;
+        bool effect13Def = true;
         bool introBoolDef = false;
         bool outroBoolDef = true;
         bool pluginTestDef = false;
@@ -82,6 +83,7 @@ namespace YTPPlusPlus
             this.effect_SlowDown.Checked = effect9Def;
             this.effect_Dance.Checked = effect10Def;
             this.effect_Squidward.Checked = effect11Def;
+            this.effect_Pixelize.Checked = effect13Def;
             this.pluginTest.Checked = pluginTestDef;
             this.InsertIntro.Checked = introBoolDef;
             this.InsertOutro.Checked = outroBoolDef;
@@ -148,6 +150,7 @@ namespace YTPPlusPlus
             this.effect_SlowDown.Checked = Properties.Settings.Default.effect_SlowDown;
             this.effect_Dance.Checked = Properties.Settings.Default.effect_Dance;
             this.effect_Squidward.Checked = Properties.Settings.Default.effect_Squidward;
+            this.effect_Pixelize.Checked = Properties.Settings.Default.effect_Pixelize;
             this.pluginTest.Checked = Properties.Settings.Default.PluginTest;
             this.InsertIntro.Checked = Properties.Settings.Default.InsertIntro;
             this.InsertOutro.Checked = Properties.Settings.Default.InsertOutro;
@@ -916,6 +919,7 @@ namespace YTPPlusPlus
                     generator.effect9 = this.effect_LowPitch.Checked;
                     generator.effect10 = this.effect_Dance.Checked;
                     generator.effect11 = this.effect_Squidward.Checked;
+                    generator.effect13 = this.effect_Pixelize.Checked;
                     generator.pluginCount = pluginCount;
                     generator.plugins = enabledPlugins;
                     generator.insertTransitionClips = InsertTransitions.Checked;

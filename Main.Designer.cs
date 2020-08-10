@@ -153,6 +153,7 @@
             this.effect_SlowDown = new System.Windows.Forms.MenuItem();
             this.effect_Dance = new System.Windows.Forms.MenuItem();
             this.effect_Squidward = new System.Windows.Forms.MenuItem();
+            this.effect_Pixelize = new System.Windows.Forms.MenuItem();
             this.audioeffects = new System.Windows.Forms.MenuItem();
             this.randomsound = new System.Windows.Forms.MenuItem();
             this.effect_RandomSound = new System.Windows.Forms.MenuItem();
@@ -1222,7 +1223,8 @@
             this.speedup,
             this.slowdown,
             this.effect_Dance,
-            this.effect_Squidward});
+            this.effect_Squidward,
+            this.effect_Pixelize});
             this.videoeffects.Text = "Video Effects";
             // 
             // effect_Reverse
@@ -1289,6 +1291,12 @@
             this.effect_Squidward.Index = 4;
             this.effect_Squidward.Text = "Squidward";
             this.effect_Squidward.Click += new System.EventHandler(this.effect_Squidward_Click);
+            // 
+            // effect_Pixelize
+            // 
+            this.effect_Pixelize.Checked = true;
+            this.effect_Pixelize.Index = 5;
+            this.effect_Pixelize.Text = "Pixelize";
             // 
             // audioeffects
             // 
@@ -1458,7 +1466,7 @@
             this.Name = "YTPPlusPlus";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "YTP++ [v2.2]";
+            this.Text = "YTP++ [v2.3]";
             this.Load += new System.EventHandler(this.YTPPlusPlus_Load);
             this.Video.ResumeLayout(false);
             this.Settings.ResumeLayout(false);
@@ -1623,6 +1631,7 @@
         private System.Windows.Forms.MenuItem theme_custom;
         private System.Windows.Forms.CheckBox EnableAccel;
         private System.Windows.Forms.Label ClipSettingsLabel;
+        private System.Windows.Forms.MenuItem effect_Pixelize;
     }
 }
 
