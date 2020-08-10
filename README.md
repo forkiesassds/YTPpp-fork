@@ -3,12 +3,11 @@
   <h1 align="center">YTP++</h1>
   <h2 align="center">Made with ❤ in C#.</h2>
   <p align="center">
-    <a href="https://discord.gg/bzhzRmg"><img alt="YTP+ Hub" src="https://img.shields.io/discord/641428540486844417"></a>
-<a href="https://github.com/YTP-Plus/YTPPlusPlus/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/YTP-Plus/YTPPlusPlus"></a>
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/YTP-Plus/YTPPlusPlus">
-  <a href="https://github.com/YTP-Plus/YTPPlusPlus/blob/master/LICENSE.txt"><img alt="GitHub license" src="https://img.shields.io/github/license/YTP-Plus/YTPPlusPlus"></a>
-  <a href="https://github.com/YTP-Plus/YTPPlusPlus/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/YTP-Plus/YTPPlusPlus/total"></a>
-  <a href="https://github.com/YTP-Plus/YTPPlusPlus/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/YTP-Plus/YTPPlusPlus"></a>
+<a href="https://github.com/YTP-Plus/YTPPlusPlus/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/forkiesassds/YTPpp-fork"></a>
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/forkiesassds/YTPpp-fork">
+  <a href="https://github.com/forkiesassds/YTPpp-fork/blob/master/LICENSE.txt"><img alt="GitHub license" src="https://img.shields.io/github/license/YTP-Plus/YTPPlusPlus"></a>
+  <a href="https://github.com/forkiesassds/YTPpp-fork/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/YTP-Plus/YTPPlusPlus/total"></a>
+  <a href="https://github.com/forkiesassds/YTPpp-fork/releases"><img alt="Latest release" src="https://img.shields.io/github/v/release/YTP-Plus/YTPPlusPlus"></a>
   </p>
 </p>
 
