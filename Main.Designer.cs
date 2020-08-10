@@ -37,6 +37,7 @@
             this.End = new System.Windows.Forms.Button();
             this.Start = new System.Windows.Forms.Button();
             this.Settings = new System.Windows.Forms.Panel();
+            this.ClipSettingsLabel = new System.Windows.Forms.Label();
             this.Clips = new System.Windows.Forms.NumericUpDown();
             this.MaxStreamDur = new System.Windows.Forms.NumericUpDown();
             this.MinStreamDur = new System.Windows.Forms.NumericUpDown();
@@ -175,7 +176,6 @@
             this.openFileDialogFFProbe = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserVLC = new System.Windows.Forms.FolderBrowserDialog();
-            this.ClipSettingsLabel = new System.Windows.Forms.Label();
             this.Video.SuspendLayout();
             this.Settings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Clips)).BeginInit();
@@ -288,6 +288,17 @@
             this.Settings.Name = "Settings";
             this.Settings.Size = new System.Drawing.Size(320, 172);
             this.Settings.TabIndex = 7;
+            // 
+            // ClipSettingsLabel
+            // 
+            this.ClipSettingsLabel.AutoSize = true;
+            this.ClipSettingsLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClipSettingsLabel.Location = new System.Drawing.Point(103, 0);
+            this.ClipSettingsLabel.Name = "ClipSettingsLabel";
+            this.ClipSettingsLabel.Size = new System.Drawing.Size(117, 25);
+            this.ClipSettingsLabel.TabIndex = 21;
+            this.ClipSettingsLabel.Text = "Clip Settings";
+            this.ClipSettingsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Clips
             // 
@@ -433,13 +444,13 @@
             // 
             this.EnableAccel.AutoSize = true;
             this.EnableAccel.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EnableAccel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(186)));
             this.EnableAccel.Location = new System.Drawing.Point(3, 145);
             this.EnableAccel.Name = "EnableAccel";
-            this.EnableAccel.Size = new System.Drawing.Size(121, 17);
+            this.EnableAccel.Size = new System.Drawing.Size(152, 17);
             this.EnableAccel.TabIndex = 28;
-            this.EnableAccel.Text = "Enable Acceleration";
+            this.EnableAccel.Text = "Enable GPU Acceleration";
             this.EnableAccel.UseVisualStyleBackColor = true;
-            this.EnableAccel.CheckedChanged += new System.EventHandler(this.EnableAccel_CheckedChanged);
             // 
             // HeightSet
             // 
@@ -1424,17 +1435,6 @@
             // folderBrowserVLC
             // 
             this.folderBrowserVLC.Description = "Please locate your VLC directory. (VideoLAN/VLC)";
-            // 
-            // ClipSettingsLabel
-            // 
-            this.ClipSettingsLabel.AutoSize = true;
-            this.ClipSettingsLabel.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClipSettingsLabel.Location = new System.Drawing.Point(103, 0);
-            this.ClipSettingsLabel.Name = "ClipSettingsLabel";
-            this.ClipSettingsLabel.Size = new System.Drawing.Size(117, 25);
-            this.ClipSettingsLabel.TabIndex = 21;
-            this.ClipSettingsLabel.Text = "Clip Settings";
-            this.ClipSettingsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // YTPPlusPlus
             // 

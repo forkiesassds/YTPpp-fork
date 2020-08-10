@@ -45,44 +45,6 @@ namespace YTPPlus
 
         public Utilities toolBox = new Utilities();
 
-        public void configurate()
-        {
-            //add some code to load this from a .cfg file later
-            toolBox.FFMPEG = "ffmpeg";
-            toolBox.FFPROBE = "ffprobe";
-            toolBox.MAGICK = "magick ";
-            toolBox.TEMP = "temp/" + "job_" + DateTimeOffset.Now.ToUnixTimeMilliseconds() + "\\";
-            Directory.CreateDirectory(toolBox.TEMP);
-            toolBox.SOURCES = "sources/";
-            toolBox.SOUNDS = "sounds/";
-            toolBox.MUSIC = "music/";
-            toolBox.RESOURCES = "resources/";
-
-            effect1 = true;
-            effect2 = true;
-            effect3 = true;
-            effect4 = true;
-            effect5 = true;
-            effect6 = true;
-            effect7 = true;
-            effect8 = true;
-            effect9 = true;
-            effect10 = true;
-            effect11 = true;
-            effect12 = true;
-
-            pluginTest = false;
-            pluginCount = 0;
-            plugins = new List<string>();
-
-            insertTransitionClips = true;
-
-            width = 640;
-            height = 480;
-            intro = false;
-            outro = true;
-        }
-
         EffectsFactory effectsFactory;
         ArrayList sourceList = new ArrayList();
         public bool done = false;
@@ -94,31 +56,6 @@ namespace YTPPlus
             //configurate();
         }
 
-        public YTPGenerator(String output, double min, double max)
-        {
-            this.OUTPUT_FILE = output;
-            this.MIN_STREAM_DURATION = min;
-            this.MAX_STREAM_DURATION = max;
-            //configurate();
-        }
-        public YTPGenerator(String output, double min, double max, int maxclips)
-        {
-            this.OUTPUT_FILE = output;
-            this.MIN_STREAM_DURATION = min;
-            this.MAX_STREAM_DURATION = max;
-            this.MAX_CLIPS = maxclips;
-            //configurate();
-        }
-        public YTPGenerator(String output, double min, double max, int maxclips, int width, int height)
-        {
-            this.OUTPUT_FILE = output;
-            this.MIN_STREAM_DURATION = min;
-            this.MAX_STREAM_DURATION = max;
-            this.MAX_CLIPS = maxclips;
-            this.width = width;
-            this.height = height;
-            //configurate();
-        }
         public void setMaxClips(int clips)
         {
             this.MAX_CLIPS = clips;
@@ -300,18 +237,7 @@ namespace YTPPlus
             cleanUp();
             rmDir(toolBox.TEMP);
         }
-        void vidThreadWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            // This function fires on the UI thread so it's safe to edit
-            // the UI control directly, no funny business with Control.Invoke :)
-            // Update the progressBar with the integer supplied to us from the
-            // ReportProgress() function.
-            doneCount = e.ProgressPercentage;
-        }
-        void vidThreadWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            done = true;
-        }
+
         public YTPGenerator go(ProgressChangedEventHandler progressReporter, RunWorkerCompletedEventHandler completedReporter)
         {
             effectsFactory = new EffectsFactory(toolBox); //hacky but works
